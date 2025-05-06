@@ -8,7 +8,7 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: order_service
-      MYSQL_USER: ibatulanand
+      MYSQL_USER: alaeddinehammouda
       MYSQL_PASSWORD: password
     volumes:
       - ./mysql_order:/var/lib/mysql
@@ -23,7 +23,7 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: inventory_service
-      MYSQL_USER: ibatulanand
+      MYSQL_USER: alaeddinehammouda
       MYSQL_PASSWORD: password
     volumes:
       - ./mysql_inventory:/var/lib/mysql
@@ -115,7 +115,7 @@ services:
 
   # Discovery Server (Eureka Server) Config
   discovery-server:
-    image: ibatulanandjp/discovery-server:latest
+    image: alaeddinehammouda/discovery-server:latest
     container_name: discovery-server
     pull_policy: always
     ports:
@@ -128,7 +128,7 @@ services:
 
   # API Gateway Service Config
   api-gateway:
-    image: ibatulanandjp/api-gateway:latest
+    image: alaeddinehammouda/api-gateway:latest
     container_name: api-gateway
     pull_policy: always
     ports:
@@ -149,7 +149,7 @@ services:
   # Product Service Config
   product-service:
     container_name: product-service
-    image: ibatulanandjp/product-service:latest
+    image: alaeddinehammouda/product-service:latest
     pull_policy: always
     environment:
       - SPRING_DATA_MONGODB_URI=mongodb://mongo:27017/product-service
@@ -165,7 +165,7 @@ services:
   # Order Service Config
   order-service:
     container_name: order-service
-    image: ibatulanandjp/order-service:latest
+    image: alaeddinehammouda/order-service:latest
     pull_policy: always
     environment:
       - SPRING_DATASOURCE_URL=jdbc:mysql://mysql-order:3306/order_service?allowPublicKeyRetrieval=true&useSSL=false
@@ -185,11 +185,11 @@ services:
   # Inventory Service Config
   inventory-service:
     container_name: inventory-service
-    image: ibatulanandjp/inventory-service:latest
+    image: alaeddinehammouda/inventory-service:latest
     pull_policy: always
     environment:
       - SPRING_DATASOURCE_URL=jdbc:mysql://mysql-inventory:3306/inventory_service?allowPublicKeyRetrieval=true&useSSL=false
-      - SPRING_DATASOURCE_USERNAME=ibatulanand
+      - SPRING_DATASOURCE_USERNAME=alaeddinehammouda
       - SPRING_DATASOURCE_PASSWORD=password
       - SERVER_PORT=8080
       - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://discovery-server:8761/eureka/
@@ -203,7 +203,7 @@ services:
   # Notification Service Config
   notification-service:
     container_name: notification-service
-    image: ibatulanandjp/notification-service:latest
+    image: alaeddinehammouda/notification-service:latest
     pull_policy: always
     environment:
       - SERVER_PORT=8080

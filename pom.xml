@@ -11,7 +11,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <groupId>com.ibatulanand</groupId>
+    <groupId>com.alaeddinehammouda</groupId>
     <artifactId>ecommerce-microservices</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
@@ -73,7 +73,7 @@
                         <image>eclipse-temurin:17.0.4.1_1-jre</image>
                     </from>
                     <to>
-                        <image>registry.hub.docker.com/ibatulanandjp/${project.artifactId}</image>
+                        <image>registry.hub.docker.com/alaeddinehammouda/${project.artifactId}</image>
                     </to>
                 </configuration>
             </plugin>
