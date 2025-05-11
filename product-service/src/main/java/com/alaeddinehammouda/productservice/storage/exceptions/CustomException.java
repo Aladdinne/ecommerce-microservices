@@ -1,7 +1,7 @@
 package com.alaeddinehammouda.productservice.storage.exceptions;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import jakarta.persistence.JoinColumn;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -17,7 +17,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @AllArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
-public class CustomException extends RuntimeException{
+public class CustomException extends RuntimeException {
     /**
      * Error code
      **/

@@ -1,10 +1,9 @@
 package com.alaeddinehammouda.productservice.storage;
 
+import com.alaeddinehammouda.productservice.storage.exceptions.InvalidFileTypeException;
 import io.jsonwebtoken.lang.Strings;
 import jakarta.validation.constraints.NotNull;
 import org.springframework.web.multipart.MultipartFile;
-import tn.yellowit.jobgate.core.storage.exceptions.InvalidFileTypeException;
-
 
 public interface StorageService {
     /**

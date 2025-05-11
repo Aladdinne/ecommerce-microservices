@@ -1,15 +1,14 @@
 package com.alaeddinehammouda.productservice.storage;
 
-import jakarta.validation.constraints.NotNull;
+import com.alaeddinehammouda.productservice.storage.enums.FileUrlType;
+import com.alaeddinehammouda.productservice.storage.exceptions.FileUploadException;
+import com.alaeddinehammouda.productservice.storage.properties.ProductsProperties;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
-import tn.yellowit.jobgate.core.storage.enums.FileUrlType;
-import tn.yellowit.jobgate.core.storage.exceptions.FileUploadException;
-import tn.yellowit.jobgate.core.storage.properties.TunijobsProperties;
-
+import jakarta.validation.constraints.NotNull;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -21,16 +20,16 @@ import java.util.UUID;
 @Service
 @RequiredArgsConstructor
 @Slf4j
-@EnableConfigurationProperties(TunijobsProperties.class)
+@EnableConfigurationProperties(ProductsProperties.class)
 public class LocalStorageServiceImpl implements StorageService {
 
-    private final TunijobsProperties tunijobsProperties;
+    private final ProductsProperties productsProperties;
     private final CustomFileRepository customFileRepository;
 
     @Override
     public CustomFile uploadFile(MultipartFile file, String path  ) {
         String relativeFilePath = path + UUID.randomUUID() + file.getOriginalFilename();
-        String completeFilePath = this.tunijobsProperties.getFile().getBaseDir() + relativeFilePath;
+        String completeFilePath = this.productsProperties.getFile().getBaseDir() + relativeFilePath;
         File myFile = new File(completeFilePath);
         saveToFileSystem(file, myFile);
         CustomFile customFile = new CustomFile( relativeFilePath, completeFilePath, FileUrlType.RELATIVE);
@@ -53,7 +52,7 @@ public class LocalStorageServiceImpl implements StorageService {
 
     @Override
     public CustomFile uploadFile(MultipartFile file) {
-        return this.uploadFile(file, this.tunijobsProperties.getFile().getDefaultPath());
+        return this.uploadFile(file, this.productsProperties.getFile().getDefaultPath());
     }
 
     private void saveToFileSystem(MultipartFile file, File myFile) throws FileUploadException {

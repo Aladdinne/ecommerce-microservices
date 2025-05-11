@@ -1,10 +1,9 @@
 package com.alaeddinehammouda.productservice.storage.rest;
 
+import com.alaeddinehammouda.productservice.storage.enums.FileUrlType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import tn.yellowit.jobgate.core.storage.enums.FileUrlType;
-
 
 import java.io.Serializable;
 

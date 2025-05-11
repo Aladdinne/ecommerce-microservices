@@ -1,9 +1,9 @@
 package com.alaeddinehammouda.productservice.storage.rest;
 
+import com.alaeddinehammouda.productservice.storage.CustomFile;
 import org.mapstruct.Mapper;
 import org.mapstruct.MappingConstants;
 import org.mapstruct.factory.Mappers;
-import tn.yellowit.jobgate.core.storage.CustomFile;
 
 
 @Mapper(componentModel = MappingConstants.ComponentModel.SPRING)

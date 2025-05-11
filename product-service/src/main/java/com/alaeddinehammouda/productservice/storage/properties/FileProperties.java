@@ -1,8 +1,7 @@
 package com.alaeddinehammouda.productservice.storage.properties;
 
+import com.alaeddinehammouda.productservice.storage.enums.FileType;
 import lombok.Data;
-import tn.yellowit.jobgate.core.storage.enums.FileType;
-
 @Data
 public class FileProperties {
     private String baseDir;

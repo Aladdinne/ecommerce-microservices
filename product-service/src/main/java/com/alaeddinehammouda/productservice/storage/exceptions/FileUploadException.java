@@ -1,8 +1,7 @@
 package com.alaeddinehammouda.productservice.storage.exceptions;
 
+import com.alaeddinehammouda.productservice.storage.exceptions.utils.MessageSourceUtils;
 import org.springframework.http.HttpStatus;
-import tn.yellowit.jobgate.core.storage.exceptions.utils.MessageSourceUtils;
-
 
 public class FileUploadException extends CustomException {
     public FileUploadException() {

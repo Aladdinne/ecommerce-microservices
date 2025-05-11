@@ -8,7 +8,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @Slf4j
 @Getter
 @Setter
-@ConfigurationProperties(prefix = "tunijobs", ignoreUnknownFields = false)
-public class TunijobsProperties {
+@ConfigurationProperties(prefix = "products", ignoreUnknownFields = false)
+public class ProductsProperties {
     private final FileProperties file = new FileProperties();
 }

@@ -1,11 +1,9 @@
 package com.alaeddinehammouda.productservice.storage.rest;
 
+import com.alaeddinehammouda.productservice.model.BaseEntity;
 import org.mapstruct.BeanMapping;
 import org.mapstruct.MappingTarget;
 import org.mapstruct.NullValuePropertyMappingStrategy;
-import tn.yellowit.jobgate.domain.dto.OfferDto;
-import tn.yellowit.jobgate.domain.entities.BaseEntity;
-import tn.yellowit.jobgate.domain.entities.Offer;
 
 import java.util.List;
 

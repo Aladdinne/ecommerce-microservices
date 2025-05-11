@@ -1,6 +1,8 @@
 package com.alaeddinehammouda.productservice.storage.exceptions.utils;
 
-import tn.yellowit.jobgate.core.storage.exceptions.CustomException;
+
+
+import com.alaeddinehammouda.productservice.storage.exceptions.CustomException;
 
 import java.util.function.Supplier;
 

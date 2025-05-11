@@ -1,37 +1,31 @@
 package com.alaeddinehammouda.productservice.storage;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.PreRemove;
+import com.alaeddinehammouda.productservice.model.BaseEntity;
+import com.alaeddinehammouda.productservice.storage.enums.FileUrlType;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
-import tn.yellowit.jobgate.core.storage.enums.FileUrlType;
-import tn.yellowit.jobgate.domain.entities.BaseEntity;
-
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 import java.io.File;
-
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
+@Document(collection = "custom_files")
 @Slf4j
 public class CustomFile extends BaseEntity {
 
     private String fileUrl;
+
     private String completePath;
-    @Enumerated(EnumType.STRING)
+
+    @Field("file_url_type")
     private FileUrlType fileUrlType;
-
-
-    @PreRemove
-    private void preRemove() {
-        // Delete the associated file
+    public void preRemove() {
         if (completePath != null) {
             File file = new File(completePath);
             if (file.exists()) {

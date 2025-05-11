@@ -1,8 +1,8 @@
 package com.alaeddinehammouda.productservice.storage;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface CustomFileRepository extends JpaRepository<CustomFile, Integer> {
+public interface CustomFileRepository extends MongoRepository<CustomFile, String> {
 }

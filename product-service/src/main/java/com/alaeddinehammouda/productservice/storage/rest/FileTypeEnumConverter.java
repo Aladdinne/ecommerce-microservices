@@ -1,11 +1,10 @@
 package com.alaeddinehammouda.productservice.storage.rest;
 
 
+import com.alaeddinehammouda.productservice.storage.enums.FileType;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Component;
-import tn.yellowit.jobgate.core.storage.enums.FileType;
-
 
 @Component
 public class FileTypeEnumConverter implements Converter<String, FileType> {
